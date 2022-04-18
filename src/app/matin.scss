@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+$orangeColor:rgb(255,125,0);
+$peachColor:rgb(245,128,128);
+html, body{
+    background:linear-gradient(to right, $orangeColor, $peachColor);
+    height: 100%;
+    
+    color:#fff;
+}

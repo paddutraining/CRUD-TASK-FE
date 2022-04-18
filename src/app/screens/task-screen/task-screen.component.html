@@ -1,0 +1,60 @@
+<div class="container  mt-4">
+<h2 class="bg-warning text-center">Task manager App</h2>
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+<h3>Task List</h3>
+            </div>
+            <div class="col-md-6 col-sm-12 ">
+                <button type="button" class="btn btn-secondary float-right" (click)="navigatenewtasklist()">
+                    New Task List
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 ">
+                <ul class="list-group">
+                    <a
+                   routerLinkActive="active"
+                    *ngFor="let itm of taskLists" [routerLink]="['/tasklists/',itm._id]" class="list-group-item list-group-item-action">  {{itm.title}}
+    
+                    
+                      <span
+                      (click)="deleteatasklist(itm)" 
+                      class="badge bg-danger rounded-pill text-white">X</span>
+                    </a>
+                   
+                  </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+<h3>Tasks</h3>
+            </div>
+            <div class="col-md-6 col-sm-12 ">
+                <button type="button" class="btn btn-secondary float-right"
+                (click)="navigatenewtasklists()">
+                    New Task
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 ">
+                <ul class="list-group">
+                  <li *ngFor="let itm of task" style="cursor:pointer"
+                  routerLinkActive="active"
+                  [class.mark-completed]="itm.complete==true"
+                  (click)="taskClicked(itm)" class="list-group-item d-flex justify-content-between align-items-center text-primary">
+                    {{itm.title}}
+                    <span
+                    (click)="deleteataskinatasklist(itm)" class="badge bg-danger rounded-pill text-white">X</span>
+                  </li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
